@@ -1,0 +1,22 @@
+html, body, div, form, input, button, section{
+    border: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+@media(max-width: 1080px){
+    html{
+        font-size: 93.75%;
+    }
+}
+@media(max-width: 720px){
+    html{
+        font-size: 87.5%;
+    }
+}
