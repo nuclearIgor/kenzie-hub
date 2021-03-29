@@ -1,0 +1,39 @@
+.navBarContainer{
+    top: 0;
+    width: 100vw;
+    position: relative;
+
+    background: cornflowerblue;
+
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+
+    margin-bottom: 0.5rem;
+}
+
+.navBarList{
+    height: 3rem;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navBarList li{
+    vertical-align: middle;
+    margin-top: 0.5rem;
+
+    font-size: 1.2rem;
+
+    text-align: center;
+}
+.navBarList li svg{
+    display: inline-block;
+    font-size: 2rem;
+}
+
+.navBarList li span{
+    margin-right: 0.2rem;
+ }
+
+.navBarList li:hover{
+    background: red;
+}

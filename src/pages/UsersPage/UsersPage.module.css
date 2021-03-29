@@ -1,0 +1,35 @@
+.pageContainer{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.userCards{
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 600px){
+    .userCards{
+        flex-flow: row wrap;
+    }
+}
+
+.pageController{
+
+    height: 4rem;
+}
+
+.pageController svg{
+    margin: 0 1rem;
+    color: cornflowerblue;
+    font-size: 3rem;
+
+    transition: 170ms;
+}
+
+.pageController svg:hover{
+    color: darkblue;
+     opacity: 0.8;
+}

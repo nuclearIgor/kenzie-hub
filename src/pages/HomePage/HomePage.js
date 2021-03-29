@@ -3,6 +3,7 @@ import {useEffect, useState} from 'react'
 import {UsersContext} from "../../context/UsersContext/UsersContext";
 import {useContext} from 'react'
 import {Link, Redirect} from "react-router-dom";
+import {NavBar} from "../../components/NavBar/NavBar";
 
 const HomePage = () => {
     const [page, setPage] = useState(1)
@@ -11,7 +12,7 @@ const HomePage = () => {
 
     return(
         <div>
-            {console.log(users)}
+
             <Link to={'/users'}>Users</Link>
         </div>
     )

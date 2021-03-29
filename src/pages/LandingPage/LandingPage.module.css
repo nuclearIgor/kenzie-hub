@@ -1,0 +1,91 @@
+.landingPageContainer{
+    height: 100vh;
+    max-width: 848px;
+    margin: 0 auto;
+    padding: 0.5rem 2rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 426px) {
+    .landingPageContainer{
+        flex-direction: row;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    .landingPageLeft{
+        flex: 1;
+        width: 50%;
+    }
+
+    .landingPageRight{
+        width: 50%;
+    }
+}
+
+.landingPageLeft{
+    flex: 1;
+    /*width: 60%;*/
+}
+
+.landingPageLeft h1{
+    color: #1877f2;
+
+    padding: 0 1.5rem;
+
+    font-size: 2rem;
+}
+
+.landingPageLeft span{
+    color: darkblue;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.landingPageLeft h2{
+    font-weight: 500;
+}
+
+.landingPageRight{
+    box-shadow: 0 0 3rem rgba(0, 0, 0, 0.3);
+    max-width: 21rem;
+
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    text-align: center;
+}
+
+.registerButton{
+    display: inline-block;
+
+    background: #42b72a;
+    color: #fff;
+
+    width: 55%;
+
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 3rem;
+
+
+    border: none;
+    border-radius: 6px;
+
+    transition: 170ms;
+}
+
+.registerButton:hover{
+    background: #399826;
+}
+
+.modal{
+    /*margin: 0 auto;*/
+}
