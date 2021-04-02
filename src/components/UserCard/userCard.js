@@ -18,6 +18,7 @@ export const UserCard = (props) => {
         <h3>{user.name}</h3>
             <p>{user.course_module}</p>
             <p>Membro desde {moment(user.created_at).format("MMM D, YYYY")}</p>
+            <p>techs: {user.techs.length}  ||  works: {user.works.length}</p>
             <Link to={`/${user.id}`}>visitar perfil <PersonIcon/></Link>
       </div>
     </div>

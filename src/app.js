@@ -6,12 +6,15 @@ import {AuthContext} from "./context/AuthContext/AuthContext";
 import {NavBar} from "./components/NavBar/NavBar";
 
 export const App = () => {
-    const {isAuth} = useContext(AuthContext)
-
+    const {isAuth, setIsAuth, token, setToken, userId} = useContext(AuthContext)
 
     useEffect(()=>{
-        console.log(isAuth)
+        const sessionToken = localStorage.getItem('token') || ''
+        setToken(sessionToken)
+        console.log(userId)
+        sessionToken && setIsAuth(true)
     },[])
+
 
   return (
     <div>

@@ -4,9 +4,17 @@ import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 
 import {useContext} from "react";
 import {AuthContext} from "../../context/AuthContext/AuthContext";
+import {Link, useHistory} from "react-router-dom";
 
 export const NavBar = () => {
-    const {setIsAuth} = useContext(AuthContext)
+    const history = useHistory()
+    const {setIsAuth, setUserId} = useContext(AuthContext)
+
+    const handleLogout = () => {
+        localStorage.clear()
+        setUserId('')
+        setIsAuth(false)
+    }
 
     return(
     <div className={styles.navBarContainer}>
@@ -14,12 +22,13 @@ export const NavBar = () => {
         <ul className={styles.navBarList}>
             {/*<li>Usuários</li>*/}
             <li>
-                <span>Meu perfil</span>
-                <PersonOutlineIcon/>
+                <Link to={'/profile'}>meu perfil</Link>
+                {/*<PersonOutlineIcon/>*/}
+
             </li>
             <li>
             <span>Sair</span>
-            <ExitToAppIcon onClick={()=>{setIsAuth(false)}}/></li>
+            <ExitToAppIcon onClick={handleLogout}/></li>
         </ul>
     </nav>
     </div>

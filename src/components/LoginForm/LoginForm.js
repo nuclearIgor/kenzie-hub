@@ -11,7 +11,7 @@ import {toast, ToastContainer} from "react-toastify";
 
 
 export const LoginForm = () => {
-    const {setIsAuth} = useContext(AuthContext)
+    const {setIsAuth, setUserId} = useContext(AuthContext)
     const history = useHistory()
 
     const schema = yup.object().shape({
@@ -35,11 +35,16 @@ export const LoginForm = () => {
         const postLogin = await axios.post('https://kenziehub.me/sessions', data)
 
         if(postLogin.status === 200){
+
+            const token = postLogin.data.token
+
+            localStorage.clear()
+            localStorage.setItem('token', JSON.stringify(token))
+            console.log(postLogin.data.user.id)
+
+            setUserId(`${postLogin.data.user.id}`)
             setIsAuth(true)
             history.push('/home')
-        }
-        else{
-        errorMessage()
         }
         console.log(postLogin)
 

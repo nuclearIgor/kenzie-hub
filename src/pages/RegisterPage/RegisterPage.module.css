@@ -1,0 +1,39 @@
+.registerPageContainer{
+    height: 100vh;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: row;
+
+    padding: 0.5rem 2rem;
+    max-width: 848px;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.registerPageLeft{
+    /*flex: 1;*/
+}
+
+.registerPageRight{
+    /*flex: 1;*/
+}
+
+.registerPageRight h1{
+    color: #1877f2;
+
+    padding: 0 1.5rem;
+
+    font-size: 2rem;
+}
+
+.registerPageRight span{
+    color: darkblue;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.registerPageRight h2{
+    font-weight: 500;
+}

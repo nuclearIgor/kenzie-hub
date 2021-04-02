@@ -1,11 +1,12 @@
 import styles from './LandingPage.module.css'
 import {LoginForm} from "../../components/LoginForm/LoginForm";
 import CodeIcon from '@material-ui/icons/Code';
-import {Modal, Backdrop, Fade} from "@material-ui/core";
 import {useState} from "react";
-import {RegisterForm} from "../../components/RegisterForm/RegisterForm";
+import {useHistory} from "react-router-dom";
 
 export const LandingPage = () => {
+    const history = useHistory()
+
     const [open, setOpen] = useState(false)
 
 
@@ -26,24 +27,12 @@ export const LandingPage = () => {
 
             <button
             className={styles.registerButton}
-            onClick={()=>setOpen(true)}
+            onClick={() => history.push('/register')}
             >
             Criar uma conta</button>
         </section>
 
-            <Modal
-            className={styles.modal}
-            open={open}
-            onClose={() => setOpen(false)}
-            BackdropComponent={Backdrop}
-            BackdropProps={{
-                timeout: 200,
-            }}
-            >
-                <Fade in={open}>
-                    <RegisterForm/>
-                </Fade>
-            </Modal>
+
         </div>
     )
 }

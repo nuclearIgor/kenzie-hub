@@ -3,24 +3,36 @@ import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import * as yup from 'yup'
 import {TextField} from "@material-ui/core";
+import axios from "axios";
+import {useHistory} from "react-router-dom";
 
 export const RegisterForm =() =>{
-    const require = 'Este campo é obrigatório'
+    const history = useHistory()
+
+    const requiredField = 'Este campo é obrigatório'
     const schema = yup.object().shape({
-        email: yup.string().email('Insira um email válido').required(require),
-        password: yup.string().required(require),
-        name: yup.string().required(require),
-        bio: yup.string().required(require),
-        contact: yup.string().required(require),
-        course_module: yup.string().required(require),
+        email: yup.string().email('Insira um email válido').required(requiredField),
+        password: yup.string().required(requiredField),
+        name: yup.string().required(requiredField),
+        bio: yup.string().required(requiredField),
+        contact: yup.string().required(requiredField),
+        course_module: yup.string().required(requiredField),
     })
 
     const {register, reset, handleSubmit, errors} = useForm({
         resolver: yupResolver(schema)
     })
 
-    const handleForm = (data) =>{
-        console.log(data)
+    const handleForm = async (data) =>{
+        // console.log(data)
+        const postRegister = await axios.post('https://kenziehub.me/users', data)
+        console.log(postRegister)
+
+        if(postRegister.status === 201){
+            history.push('/')
+        }
+
+        reset()
     }
 
     return(
