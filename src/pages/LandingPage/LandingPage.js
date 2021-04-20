@@ -1,5 +1,5 @@
 import styles from './LandingPage.module.css'
-import {LoginForm} from "../../components/LoginForm/LoginForm";
+import {LoginForm} from "../../components/Forms/LoginForm/LoginForm";
 import CodeIcon from '@material-ui/icons/Code';
 import {useState} from "react";
 import {useHistory} from "react-router-dom";

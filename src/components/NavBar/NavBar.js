@@ -5,14 +5,15 @@ import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import {useContext} from "react";
 import {AuthContext} from "../../context/AuthContext/AuthContext";
 import {Link, useHistory} from "react-router-dom";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
 export const NavBar = () => {
     const history = useHistory()
-    const {setIsAuth, setUserId} = useContext(AuthContext)
+    const {setIsAuth, setToken} = useContext(AuthContext)
 
     const handleLogout = () => {
         localStorage.clear()
-        setUserId('')
+        setToken('')
         setIsAuth(false)
     }
 
@@ -20,7 +21,7 @@ export const NavBar = () => {
     <div className={styles.navBarContainer}>
     <nav>
         <ul className={styles.navBarList}>
-            {/*<li>Usuários</li>*/}
+            <li><ArrowBackIcon onClick={() => history.push('/')}/></li>
             <li>
                 <Link to={'/profile'}>meu perfil</Link>
                 {/*<PersonOutlineIcon/>*/}

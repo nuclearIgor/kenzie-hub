@@ -6,12 +6,12 @@ import {useHistory} from 'react-router-dom'
 import {TextField} from "@material-ui/core";
 import axios from "axios";
 import {useContext} from "react";
-import {AuthContext} from "../../context/AuthContext/AuthContext";
+import {AuthContext} from "../../../context/AuthContext/AuthContext";
 import {toast, ToastContainer} from "react-toastify";
 
 
 export const LoginForm = () => {
-    const {setIsAuth, setUserId} = useContext(AuthContext)
+    const {setIsAuth, setToken} = useContext(AuthContext)
     const history = useHistory()
 
     const schema = yup.object().shape({
@@ -37,12 +37,11 @@ export const LoginForm = () => {
         if(postLogin.status === 200){
 
             const token = postLogin.data.token
+            setToken(token)
 
             localStorage.clear()
             localStorage.setItem('token', JSON.stringify(token))
-            console.log(postLogin.data.user.id)
 
-            setUserId(`${postLogin.data.user.id}`)
             setIsAuth(true)
             history.push('/home')
         }

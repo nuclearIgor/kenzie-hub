@@ -1,6 +1,6 @@
 import styles from './RegisterPage.module.css'
 import CodeIcon from "@material-ui/icons/Code";
-import {RegisterForm} from "../../components/RegisterForm/RegisterForm";
+import {RegisterForm} from "../../components/Forms/RegisterForm/RegisterForm";
 
 const RegisterPage = () => {
     return (
