@@ -21,10 +21,10 @@ export const NavBar = () => {
     <div className={styles.navBarContainer}>
     <nav>
         <ul className={styles.navBarList}>
-            <li><ArrowBackIcon onClick={() => history.push('/')}/></li>
+            <li><ArrowBackIcon onClick={() => history.push('/')}/>voltar</li>
             <li>
                 <Link to={'/profile'}>meu perfil</Link>
-                {/*<PersonOutlineIcon/>*/}
+                <PersonOutlineIcon/>
 
             </li>
             <li>

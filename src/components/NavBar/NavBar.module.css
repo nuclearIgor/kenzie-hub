@@ -35,5 +35,5 @@
  }
 
 .navBarList li:hover{
-    background: red;
+    cursor: pointer;
 }

@@ -1,15 +1,21 @@
 .registerPageContainer{
-    height: 100vh;
     margin: 0 auto;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
     padding: 0.5rem 2rem;
     max-width: 848px;
 
     align-items: center;
     justify-content: center;
+}
+
+@media screen and (min-width: 426px) {
+
+    .registerPageContainer{
+        flex-direction: row;
+    }
 }
 
 .registerPageLeft{
