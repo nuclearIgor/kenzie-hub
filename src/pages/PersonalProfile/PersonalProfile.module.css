@@ -3,11 +3,16 @@
     flex-direction: column;
 }
 
+.pageContainer > h4{
+    text-align: center;
+}
+
 .profileHeader{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     border-bottom: darkcyan 1px solid;
+    padding: 1rem;
 }
 .profileHeader img{
     height: 8rem;
@@ -23,6 +28,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .headerRight{
@@ -34,4 +41,25 @@
 .pageContainer > p {
     margin-top: 1rem;
     text-align: center;
+}
+
+.addButtons{
+    border-top: 1px solid #1877f2;
+
+    padding-top: 0.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.addButtons svg {
+    color: #1877f2;
+}
+.cardsSection > div{
+    width: 50%;
+}
+
+.cardsSection{
+    display: flex;
+    justify-content: space-evenly;
 }

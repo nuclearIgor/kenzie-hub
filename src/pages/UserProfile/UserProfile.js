@@ -35,7 +35,10 @@ export const UserProfile = () => {
         <p className={styles.userBio}>{user.bio}</p>
     <div className={styles.flexContainer}>
         <div className={styles.techs}>
-           <TechsDisplay techs={user.techs}/>
+            {!!user.techs && user.techs.length > 0 ? (
+                user.techs.map((item, index) => <TechsDisplay isOwner={false} item={item}/>)
+            ) : (<p>não</p>)}
+
         </div>
         <div className={styles.works}></div>
     </div>
