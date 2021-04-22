@@ -8,16 +8,14 @@ import moment from "moment";
 import {TechsDisplay} from "../../components/TechsDisplay/TechsDisplay";
 import WorksDisplay from "../../components/WorksDisplay/WorksDisplay";
 import AddCircleIcon from '@material-ui/icons/AddCircle';
-import {Modal, Fade} from "@material-ui/core";
 import {TechsForm} from "../../components/Forms/TechsForm/TechsForm";
-import {Work} from "@material-ui/icons";
 import {WorksForm} from "../../components/Forms/WorksForm/WorksForm";
 import ModalComponent from "../../components/ModalComponent/ModalComponent";
 
 
 export const PersonalProfile = () => {
 
-    const {token, userId} = useContext(AuthContext)
+    const {token, globalUser} = useContext(AuthContext)
     const [user, setUser] = useState({})
     const [newTech, setNewTech] = useState(false)
     const [newWork, setNewWork] = useState(false)
@@ -34,7 +32,7 @@ export const PersonalProfile = () => {
             return userData
         }
         fetchUser()
-    },[])
+    },[globalUser])
 
     return (
         <div className={styles.pageContainer}>

@@ -10,7 +10,7 @@ import CloseIcon from '@material-ui/icons/Close';
 
 export const WorksForm = ({work, edit, handleClose}) => {
 
-    const {token} = useContext(AuthContext)
+    const {token, setGlobalUser} = useContext(AuthContext)
 
 
     const schema = yup.object().shape({
@@ -32,10 +32,10 @@ export const WorksForm = ({work, edit, handleClose}) => {
     const handleForm = (data) =>{
     handleClose()
         if(edit){
-            baseUrl.put(`/users/works/${work.id}`, data, headers).then(res => console.log(res)).catch(err => console.log(err))
+            baseUrl.put(`/users/works/${work.id}`, data, headers).then(res => setGlobalUser(res)).catch(err => console.log(err))
         }
         else {
-            baseUrl.post('/users/works', data, headers).then(res => console.log(res)).catch(err => console.log(err))
+            baseUrl.post('/users/works', data, headers).then(res => setGlobalUser(res)).catch(err => console.log(err))
         }
     }
 
